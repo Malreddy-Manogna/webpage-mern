@@ -101,6 +101,13 @@ export default function LoginPage() {
               theme="filled_black"
               useOneTap={true}
               onSuccess={googleResponse}
+              onError={() =>
+                showNotification({
+                  title: "Google Login Failed",
+                  message: "Unable to sign in with Google. Check console for details.",
+                  color: "red",
+                })
+              }
             />
           </Stack>
         </Card>
